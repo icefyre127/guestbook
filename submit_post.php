@@ -65,7 +65,10 @@ $result = $db->query('SELECT * FROM guestbook');
 foreach($result as $row)
 {
 
-print "<tr><td>".$row['Date']."</td>";
+echo $row['Date'];
+$date = date("M-d-Y",strftime($row['Date']));
+print "<tr><td>".$date."</td>";
+//print "<tr><td>".$row['Date']."</td>";
 
 print "<td>".$row['Name']."</td>";
 
